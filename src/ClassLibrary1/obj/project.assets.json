@@ -1,0 +1,633 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "CommunityToolkit.HighPerformance/8.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/CommunityToolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/CommunityToolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Corvus.HighPerformance/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Memory": "4.5.5"
+        },
+        "compile": {
+          "lib/net8.0/Corvus.HighPerformance.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Corvus.HighPerformance.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Corvus.Json.ExtendedTypes/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Corvus.Json.JsonReference": "4.3.0",
+          "Corvus.UriTemplates": "2.2.0",
+          "NodaTime": "3.2.1",
+          "System.Collections.Immutable": "9.0.0",
+          "System.Text.Json": "9.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Corvus.Json.ExtendedTypes.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Corvus.Json.ExtendedTypes.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Corvus.Json.JsonReference/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Corvus.HighPerformance": "1.0.0",
+          "System.Text.Json": "9.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Corvus.Json.JsonReference.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Corvus.Json.JsonReference.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Corvus.UriTemplates/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.HighPerformance": "8.3.0",
+          "Corvus.HighPerformance": "1.0.0",
+          "Microsoft.Extensions.ObjectPool": "8.0.8",
+          "System.Buffers": "4.5.1",
+          "System.Collections.Immutable": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Corvus.UriTemplates.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Corvus.UriTemplates.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.ObjectPool/8.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NodaTime/3.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/NodaTime.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/NodaTime.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "System.Buffers/4.5.1": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "System.Collections.Immutable/9.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "System.IO.Pipelines/9.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "System.Memory/4.5.5": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "System.Text.Encodings.Web/9.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll": {
+            "assetType": "runtime",
+            "rid": "browser"
+          }
+        }
+      },
+      "System.Text.Json/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Pipelines": "9.0.0",
+          "System.Text.Encodings.Web": "9.0.0"
+        },
+        "compile": {
+          "lib/net8.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/System.Text.Json.targets": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CommunityToolkit.HighPerformance/8.3.0": {
+      "sha512": "2zc0Wfr9OtEbLqm6J1Jycim/nKmYv+v12CytJ3tZGNzw7n3yjh1vNCMX0kIBaFBk3sw8g0pMR86QJGXGlArC+A==",
+      "type": "package",
+      "path": "communitytoolkit.highperformance/8.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "communitytoolkit.highperformance.8.3.0.nupkg.sha512",
+        "communitytoolkit.highperformance.nuspec",
+        "lib/net6.0/CommunityToolkit.HighPerformance.dll",
+        "lib/net6.0/CommunityToolkit.HighPerformance.pdb",
+        "lib/net6.0/CommunityToolkit.HighPerformance.xml",
+        "lib/net7.0/CommunityToolkit.HighPerformance.dll",
+        "lib/net7.0/CommunityToolkit.HighPerformance.pdb",
+        "lib/net7.0/CommunityToolkit.HighPerformance.xml",
+        "lib/net8.0/CommunityToolkit.HighPerformance.dll",
+        "lib/net8.0/CommunityToolkit.HighPerformance.pdb",
+        "lib/net8.0/CommunityToolkit.HighPerformance.xml",
+        "lib/netstandard2.0/CommunityToolkit.HighPerformance.dll",
+        "lib/netstandard2.0/CommunityToolkit.HighPerformance.pdb",
+        "lib/netstandard2.0/CommunityToolkit.HighPerformance.xml",
+        "lib/netstandard2.1/CommunityToolkit.HighPerformance.dll",
+        "lib/netstandard2.1/CommunityToolkit.HighPerformance.pdb",
+        "lib/netstandard2.1/CommunityToolkit.HighPerformance.xml"
+      ]
+    },
+    "Corvus.HighPerformance/1.0.0": {
+      "sha512": "ymxAkH0mhLXEggpIfbMDegA/wg4Q6PjOr2uUkHQX2HubqHD3hcOe2nf0yc3Y5GS9WHkSlc4asjTkP0rHsScDgg==",
+      "type": "package",
+      "path": "corvus.highperformance/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "PackageIcon.png",
+        "corvus.highperformance.1.0.0.nupkg.sha512",
+        "corvus.highperformance.nuspec",
+        "lib/net8.0/Corvus.HighPerformance.dll",
+        "lib/net8.0/Corvus.HighPerformance.xml",
+        "lib/netstandard2.0/Corvus.HighPerformance.dll",
+        "lib/netstandard2.0/Corvus.HighPerformance.xml"
+      ]
+    },
+    "Corvus.Json.ExtendedTypes/4.3.0": {
+      "sha512": "Kg5Kl8fZMz6Xpdd5qXQ9gIvs6D/UPZzWajMV0s5RjSuviG3jFtHjDl+AdCdR01zi2YrgvM+1ClAtDjg4NTkylQ==",
+      "type": "package",
+      "path": "corvus.json.extendedtypes/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "PackageIcon.png",
+        "corvus.json.extendedtypes.4.3.0.nupkg.sha512",
+        "corvus.json.extendedtypes.nuspec",
+        "lib/net8.0/Corvus.Json.ExtendedTypes.dll",
+        "lib/net8.0/Corvus.Json.ExtendedTypes.xml",
+        "lib/netstandard2.0/Corvus.Json.ExtendedTypes.dll",
+        "lib/netstandard2.0/Corvus.Json.ExtendedTypes.xml"
+      ]
+    },
+    "Corvus.Json.JsonReference/4.3.0": {
+      "sha512": "eDg+1zuY/57gnlLAotkVj3VfWkOywY11UDEizCzKT2rLZ9LWB1o4asENjonSdngSawUF9tQo02nMPkUx1XpuDw==",
+      "type": "package",
+      "path": "corvus.json.jsonreference/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "PackageIcon.png",
+        "corvus.json.jsonreference.4.3.0.nupkg.sha512",
+        "corvus.json.jsonreference.nuspec",
+        "lib/net8.0/Corvus.Json.JsonReference.dll",
+        "lib/net8.0/Corvus.Json.JsonReference.xml",
+        "lib/netstandard2.0/Corvus.Json.JsonReference.dll",
+        "lib/netstandard2.0/Corvus.Json.JsonReference.xml"
+      ]
+    },
+    "Corvus.UriTemplates/2.2.0": {
+      "sha512": "FVUwM2/YJ0OYQFjIjGLt5mxW8JWkZLnU/0vXHtnhwCfcf/2VWe5pz2DLLmxE8PX98hMKBcZLeIaMdU68IH4erA==",
+      "type": "package",
+      "path": "corvus.uritemplates/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "PackageIcon.png",
+        "corvus.uritemplates.2.2.0.nupkg.sha512",
+        "corvus.uritemplates.nuspec",
+        "lib/net8.0/Corvus.UriTemplates.dll",
+        "lib/net8.0/Corvus.UriTemplates.xml",
+        "lib/netstandard2.0/Corvus.UriTemplates.dll",
+        "lib/netstandard2.0/Corvus.UriTemplates.xml"
+      ]
+    },
+    "Microsoft.Extensions.ObjectPool/8.0.8": {
+      "sha512": "wnjTFjEvvSbOs3iMfl6CeJcUgPHZMYUB9uAQbGQGxGwVRl4GydNpMSkVntTzoi7AqQeYumU9yDSNeVbpq+ebow==",
+      "type": "package",
+      "path": "microsoft.extensions.objectpool/8.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net462/Microsoft.Extensions.ObjectPool.dll",
+        "lib/net462/Microsoft.Extensions.ObjectPool.xml",
+        "lib/net8.0/Microsoft.Extensions.ObjectPool.dll",
+        "lib/net8.0/Microsoft.Extensions.ObjectPool.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.xml",
+        "microsoft.extensions.objectpool.8.0.8.nupkg.sha512",
+        "microsoft.extensions.objectpool.nuspec"
+      ]
+    },
+    "NodaTime/3.2.1": {
+      "sha512": "D1aHhUfPQUxU2nfDCVuSLahpp0xCYZTmj/KNH3mSK/tStJYcx9HO9aJ0qbOP3hzjGPV/DXOqY2AHe27Nt4xs4g==",
+      "type": "package",
+      "path": "nodatime/3.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net6.0/NodaTime.dll",
+        "lib/net6.0/NodaTime.pdb",
+        "lib/net6.0/NodaTime.xml",
+        "lib/net8.0/NodaTime.dll",
+        "lib/net8.0/NodaTime.pdb",
+        "lib/net8.0/NodaTime.xml",
+        "lib/netstandard2.0/NodaTime.dll",
+        "lib/netstandard2.0/NodaTime.pdb",
+        "lib/netstandard2.0/NodaTime.xml",
+        "nodatime.3.2.1.nupkg.sha512",
+        "nodatime.nuspec"
+      ]
+    },
+    "System.Buffers/4.5.1": {
+      "sha512": "Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
+      "type": "package",
+      "path": "system.buffers/4.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Buffers.dll",
+        "lib/net461/System.Buffers.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.1/System.Buffers.dll",
+        "lib/netstandard1.1/System.Buffers.xml",
+        "lib/netstandard2.0/System.Buffers.dll",
+        "lib/netstandard2.0/System.Buffers.xml",
+        "lib/uap10.0.16299/_._",
+        "ref/net45/System.Buffers.dll",
+        "ref/net45/System.Buffers.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.1/System.Buffers.dll",
+        "ref/netstandard1.1/System.Buffers.xml",
+        "ref/netstandard2.0/System.Buffers.dll",
+        "ref/netstandard2.0/System.Buffers.xml",
+        "ref/uap10.0.16299/_._",
+        "system.buffers.4.5.1.nupkg.sha512",
+        "system.buffers.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Collections.Immutable/9.0.0": {
+      "sha512": "QhkXUl2gNrQtvPmtBTQHb0YsUrDiDQ2QS09YbtTTiSjGcf7NBqtYbrG/BE06zcBPCKEwQGzIv13IVdXNOSub2w==",
+      "type": "package",
+      "path": "system.collections.immutable/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Collections.Immutable.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets",
+        "lib/net462/System.Collections.Immutable.dll",
+        "lib/net462/System.Collections.Immutable.xml",
+        "lib/net8.0/System.Collections.Immutable.dll",
+        "lib/net8.0/System.Collections.Immutable.xml",
+        "lib/net9.0/System.Collections.Immutable.dll",
+        "lib/net9.0/System.Collections.Immutable.xml",
+        "lib/netstandard2.0/System.Collections.Immutable.dll",
+        "lib/netstandard2.0/System.Collections.Immutable.xml",
+        "system.collections.immutable.9.0.0.nupkg.sha512",
+        "system.collections.immutable.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.IO.Pipelines/9.0.0": {
+      "sha512": "eA3cinogwaNB4jdjQHOP3Z3EuyiDII7MT35jgtnsA4vkn0LUrrSHsU0nzHTzFzmaFYeKV7MYyMxOocFzsBHpTw==",
+      "type": "package",
+      "path": "system.io.pipelines/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.IO.Pipelines.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.IO.Pipelines.targets",
+        "lib/net462/System.IO.Pipelines.dll",
+        "lib/net462/System.IO.Pipelines.xml",
+        "lib/net8.0/System.IO.Pipelines.dll",
+        "lib/net8.0/System.IO.Pipelines.xml",
+        "lib/net9.0/System.IO.Pipelines.dll",
+        "lib/net9.0/System.IO.Pipelines.xml",
+        "lib/netstandard2.0/System.IO.Pipelines.dll",
+        "lib/netstandard2.0/System.IO.Pipelines.xml",
+        "system.io.pipelines.9.0.0.nupkg.sha512",
+        "system.io.pipelines.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Memory/4.5.5": {
+      "sha512": "XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
+      "type": "package",
+      "path": "system.memory/4.5.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Memory.dll",
+        "lib/net461/System.Memory.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.5.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Text.Encodings.Web/9.0.0": {
+      "sha512": "e2hMgAErLbKyUUwt18qSBf9T5Y+SFAL3ZedM8fLupkVj8Rj2PZ9oxQ37XX2LF8fTO1wNIxvKpihD7Of7D/NxZw==",
+      "type": "package",
+      "path": "system.text.encodings.web/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Text.Encodings.Web.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Text.Encodings.Web.targets",
+        "lib/net462/System.Text.Encodings.Web.dll",
+        "lib/net462/System.Text.Encodings.Web.xml",
+        "lib/net8.0/System.Text.Encodings.Web.dll",
+        "lib/net8.0/System.Text.Encodings.Web.xml",
+        "lib/net9.0/System.Text.Encodings.Web.dll",
+        "lib/net9.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net9.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net9.0/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.9.0.0.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Text.Json/9.0.0": {
+      "sha512": "js7+qAu/9mQvnhA4EfGMZNEzXtJCDxgkgj8ohuxq/Qxv+R56G+ljefhiJHOxTNiw54q8vmABCWUwkMulNdlZ4A==",
+      "type": "package",
+      "path": "system.text.json/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/roslyn3.11/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn3.11/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.0/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "buildTransitive/net461/System.Text.Json.targets",
+        "buildTransitive/net462/System.Text.Json.targets",
+        "buildTransitive/net8.0/System.Text.Json.targets",
+        "buildTransitive/netcoreapp2.0/System.Text.Json.targets",
+        "buildTransitive/netstandard2.0/System.Text.Json.targets",
+        "lib/net462/System.Text.Json.dll",
+        "lib/net462/System.Text.Json.xml",
+        "lib/net8.0/System.Text.Json.dll",
+        "lib/net8.0/System.Text.Json.xml",
+        "lib/net9.0/System.Text.Json.dll",
+        "lib/net9.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.9.0.0.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Corvus.Json.ExtendedTypes >= 4.3.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\J63443\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0-preview",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ClassLibrary1\\ClassLibrary1.csproj",
+      "projectName": "ClassLibrary1",
+      "projectPath": "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ClassLibrary1\\ClassLibrary1.csproj",
+      "packagesPath": "C:\\Users\\J63443\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ClassLibrary1\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\J63443\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {},
+        "https://git.eon-cds.de/api/v4/groups/47556/-/packages/nuget/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "Corvus.Json.ExtendedTypes": {
+            "target": "Package",
+            "version": "[4.3.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

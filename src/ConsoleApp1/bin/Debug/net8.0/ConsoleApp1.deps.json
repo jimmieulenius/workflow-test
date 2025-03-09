@@ -1,0 +1,258 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ConsoleApp1/1.0.0": {
+        "dependencies": {
+          "ClassLibrary1": "1.0.0-preview",
+          "Corvus.Json.ExtendedTypes": "4.3.0"
+        },
+        "runtime": {
+          "ConsoleApp1.dll": {}
+        }
+      },
+      "CommunityToolkit.HighPerformance/8.3.0": {
+        "runtime": {
+          "lib/net8.0/CommunityToolkit.HighPerformance.dll": {
+            "assemblyVersion": "8.3.0.0",
+            "fileVersion": "8.3.0.1"
+          }
+        }
+      },
+      "Corvus.HighPerformance/1.0.0": {
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Memory": "4.5.5"
+        },
+        "runtime": {
+          "lib/net8.0/Corvus.HighPerformance.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Corvus.Json.ExtendedTypes/4.3.0": {
+        "dependencies": {
+          "Corvus.Json.JsonReference": "4.3.0",
+          "Corvus.UriTemplates": "2.2.0",
+          "NodaTime": "3.2.1",
+          "System.Collections.Immutable": "9.0.0",
+          "System.Text.Json": "9.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/Corvus.Json.ExtendedTypes.dll": {
+            "assemblyVersion": "4.3.0.0",
+            "fileVersion": "4.3.0.0"
+          }
+        }
+      },
+      "Corvus.Json.JsonReference/4.3.0": {
+        "dependencies": {
+          "Corvus.HighPerformance": "1.0.0",
+          "System.Text.Json": "9.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/Corvus.Json.JsonReference.dll": {
+            "assemblyVersion": "4.3.0.0",
+            "fileVersion": "4.3.0.0"
+          }
+        }
+      },
+      "Corvus.UriTemplates/2.2.0": {
+        "dependencies": {
+          "CommunityToolkit.HighPerformance": "8.3.0",
+          "Corvus.HighPerformance": "1.0.0",
+          "Microsoft.Extensions.ObjectPool": "8.0.8",
+          "System.Buffers": "4.5.1",
+          "System.Collections.Immutable": "9.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/Corvus.UriTemplates.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        }
+      },
+      "Microsoft.Extensions.ObjectPool/8.0.8": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.ObjectPool.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.824.36908"
+          }
+        }
+      },
+      "NodaTime/3.2.1": {
+        "runtime": {
+          "lib/net8.0/NodaTime.dll": {
+            "assemblyVersion": "3.2.1.0",
+            "fileVersion": "3.2.1.0"
+          }
+        }
+      },
+      "System.Buffers/4.5.1": {},
+      "System.Collections.Immutable/9.0.0": {
+        "runtime": {
+          "lib/net8.0/System.Collections.Immutable.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
+          }
+        }
+      },
+      "System.IO.Pipelines/9.0.0": {
+        "runtime": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
+          }
+        }
+      },
+      "System.Memory/4.5.5": {},
+      "System.Text.Encodings.Web/9.0.0": {
+        "runtime": {
+          "lib/net8.0/System.Text.Encodings.Web.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll": {
+            "rid": "browser",
+            "assetType": "runtime",
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
+          }
+        }
+      },
+      "System.Text.Json/9.0.0": {
+        "dependencies": {
+          "System.IO.Pipelines": "9.0.0",
+          "System.Text.Encodings.Web": "9.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/System.Text.Json.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
+          }
+        }
+      },
+      "ClassLibrary1/1.0.0-preview": {
+        "dependencies": {
+          "Corvus.Json.ExtendedTypes": "4.3.0"
+        },
+        "runtime": {
+          "ClassLibrary1.dll": {
+            "assemblyVersion": "1.0.0-preview",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConsoleApp1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CommunityToolkit.HighPerformance/8.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2zc0Wfr9OtEbLqm6J1Jycim/nKmYv+v12CytJ3tZGNzw7n3yjh1vNCMX0kIBaFBk3sw8g0pMR86QJGXGlArC+A==",
+      "path": "communitytoolkit.highperformance/8.3.0",
+      "hashPath": "communitytoolkit.highperformance.8.3.0.nupkg.sha512"
+    },
+    "Corvus.HighPerformance/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ymxAkH0mhLXEggpIfbMDegA/wg4Q6PjOr2uUkHQX2HubqHD3hcOe2nf0yc3Y5GS9WHkSlc4asjTkP0rHsScDgg==",
+      "path": "corvus.highperformance/1.0.0",
+      "hashPath": "corvus.highperformance.1.0.0.nupkg.sha512"
+    },
+    "Corvus.Json.ExtendedTypes/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Kg5Kl8fZMz6Xpdd5qXQ9gIvs6D/UPZzWajMV0s5RjSuviG3jFtHjDl+AdCdR01zi2YrgvM+1ClAtDjg4NTkylQ==",
+      "path": "corvus.json.extendedtypes/4.3.0",
+      "hashPath": "corvus.json.extendedtypes.4.3.0.nupkg.sha512"
+    },
+    "Corvus.Json.JsonReference/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eDg+1zuY/57gnlLAotkVj3VfWkOywY11UDEizCzKT2rLZ9LWB1o4asENjonSdngSawUF9tQo02nMPkUx1XpuDw==",
+      "path": "corvus.json.jsonreference/4.3.0",
+      "hashPath": "corvus.json.jsonreference.4.3.0.nupkg.sha512"
+    },
+    "Corvus.UriTemplates/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FVUwM2/YJ0OYQFjIjGLt5mxW8JWkZLnU/0vXHtnhwCfcf/2VWe5pz2DLLmxE8PX98hMKBcZLeIaMdU68IH4erA==",
+      "path": "corvus.uritemplates/2.2.0",
+      "hashPath": "corvus.uritemplates.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.ObjectPool/8.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wnjTFjEvvSbOs3iMfl6CeJcUgPHZMYUB9uAQbGQGxGwVRl4GydNpMSkVntTzoi7AqQeYumU9yDSNeVbpq+ebow==",
+      "path": "microsoft.extensions.objectpool/8.0.8",
+      "hashPath": "microsoft.extensions.objectpool.8.0.8.nupkg.sha512"
+    },
+    "NodaTime/3.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D1aHhUfPQUxU2nfDCVuSLahpp0xCYZTmj/KNH3mSK/tStJYcx9HO9aJ0qbOP3hzjGPV/DXOqY2AHe27Nt4xs4g==",
+      "path": "nodatime/3.2.1",
+      "hashPath": "nodatime.3.2.1.nupkg.sha512"
+    },
+    "System.Buffers/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
+      "path": "system.buffers/4.5.1",
+      "hashPath": "system.buffers.4.5.1.nupkg.sha512"
+    },
+    "System.Collections.Immutable/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QhkXUl2gNrQtvPmtBTQHb0YsUrDiDQ2QS09YbtTTiSjGcf7NBqtYbrG/BE06zcBPCKEwQGzIv13IVdXNOSub2w==",
+      "path": "system.collections.immutable/9.0.0",
+      "hashPath": "system.collections.immutable.9.0.0.nupkg.sha512"
+    },
+    "System.IO.Pipelines/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eA3cinogwaNB4jdjQHOP3Z3EuyiDII7MT35jgtnsA4vkn0LUrrSHsU0nzHTzFzmaFYeKV7MYyMxOocFzsBHpTw==",
+      "path": "system.io.pipelines/9.0.0",
+      "hashPath": "system.io.pipelines.9.0.0.nupkg.sha512"
+    },
+    "System.Memory/4.5.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
+      "path": "system.memory/4.5.5",
+      "hashPath": "system.memory.4.5.5.nupkg.sha512"
+    },
+    "System.Text.Encodings.Web/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e2hMgAErLbKyUUwt18qSBf9T5Y+SFAL3ZedM8fLupkVj8Rj2PZ9oxQ37XX2LF8fTO1wNIxvKpihD7Of7D/NxZw==",
+      "path": "system.text.encodings.web/9.0.0",
+      "hashPath": "system.text.encodings.web.9.0.0.nupkg.sha512"
+    },
+    "System.Text.Json/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-js7+qAu/9mQvnhA4EfGMZNEzXtJCDxgkgj8ohuxq/Qxv+R56G+ljefhiJHOxTNiw54q8vmABCWUwkMulNdlZ4A==",
+      "path": "system.text.json/9.0.0",
+      "hashPath": "system.text.json.9.0.0.nupkg.sha512"
+    },
+    "ClassLibrary1/1.0.0-preview": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

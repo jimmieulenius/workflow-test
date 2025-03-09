@@ -1,0 +1,13 @@
+C:\Users\J63443\OneDrive - E.ON\Source\personal\workflow-test\src\ClassLibrary1\bin\Debug\net8.0\ClassLibrary1.deps.json
+C:\Users\J63443\OneDrive - E.ON\Source\personal\workflow-test\src\ClassLibrary1\bin\Debug\net8.0\ClassLibrary1.dll
+C:\Users\J63443\OneDrive - E.ON\Source\personal\workflow-test\src\ClassLibrary1\bin\Debug\net8.0\ClassLibrary1.pdb
+C:\Users\J63443\OneDrive - E.ON\Source\personal\workflow-test\src\ClassLibrary1\obj\Debug\net8.0\ClassLibrary1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\J63443\OneDrive - E.ON\Source\personal\workflow-test\src\ClassLibrary1\obj\Debug\net8.0\ClassLibrary1.AssemblyInfoInputs.cache
+C:\Users\J63443\OneDrive - E.ON\Source\personal\workflow-test\src\ClassLibrary1\obj\Debug\net8.0\ClassLibrary1.AssemblyInfo.cs
+C:\Users\J63443\OneDrive - E.ON\Source\personal\workflow-test\src\ClassLibrary1\obj\Debug\net8.0\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\J63443\OneDrive - E.ON\Source\personal\workflow-test\src\ClassLibrary1\obj\Debug\net8.0\ClassLibrary1.sourcelink.json
+C:\Users\J63443\OneDrive - E.ON\Source\personal\workflow-test\src\ClassLibrary1\obj\Debug\net8.0\ClassLibrary1.dll
+C:\Users\J63443\OneDrive - E.ON\Source\personal\workflow-test\src\ClassLibrary1\obj\Debug\net8.0\refint\ClassLibrary1.dll
+C:\Users\J63443\OneDrive - E.ON\Source\personal\workflow-test\src\ClassLibrary1\obj\Debug\net8.0\ClassLibrary1.pdb
+C:\Users\J63443\OneDrive - E.ON\Source\personal\workflow-test\src\ClassLibrary1\obj\Debug\net8.0\ref\ClassLibrary1.dll
+C:\Users\J63443\OneDrive - E.ON\Source\personal\workflow-test\src\ClassLibrary1\obj\Debug\net8.0\ClassLibrary1.csproj.AssemblyReference.cache

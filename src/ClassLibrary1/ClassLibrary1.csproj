@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <PackageVersion>1.0.0-preview</PackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Corvus.Json.ExtendedTypes" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>

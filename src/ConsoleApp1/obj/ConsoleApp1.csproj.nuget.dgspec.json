@@ -1,0 +1,142 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ConsoleApp1\\ConsoleApp1.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ClassLibrary1\\ClassLibrary1.csproj": {
+      "version": "1.0.0-preview",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ClassLibrary1\\ClassLibrary1.csproj",
+        "projectName": "ClassLibrary1",
+        "projectPath": "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ClassLibrary1\\ClassLibrary1.csproj",
+        "packagesPath": "C:\\Users\\J63443\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ClassLibrary1\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\J63443\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://git.eon-cds.de/api/v4/groups/47556/-/packages/nuget/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Corvus.Json.ExtendedTypes": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ConsoleApp1\\ConsoleApp1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectName": "ConsoleApp1",
+        "projectPath": "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ConsoleApp1\\ConsoleApp1.csproj",
+        "packagesPath": "C:\\Users\\J63443\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ConsoleApp1\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\J63443\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://git.eon-cds.de/api/v4/groups/47556/-/packages/nuget/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ClassLibrary1\\ClassLibrary1.csproj": {
+                "projectPath": "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ClassLibrary1\\ClassLibrary1.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Corvus.Json.ExtendedTypes": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "qH7qSZ/LJg0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ConsoleApp1\\ConsoleApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\J63443\\.nuget\\packages\\communitytoolkit.highperformance\\8.3.0\\communitytoolkit.highperformance.8.3.0.nupkg.sha512",
+    "C:\\Users\\J63443\\.nuget\\packages\\corvus.highperformance\\1.0.0\\corvus.highperformance.1.0.0.nupkg.sha512",
+    "C:\\Users\\J63443\\.nuget\\packages\\corvus.json.extendedtypes\\4.3.0\\corvus.json.extendedtypes.4.3.0.nupkg.sha512",
+    "C:\\Users\\J63443\\.nuget\\packages\\corvus.json.jsonreference\\4.3.0\\corvus.json.jsonreference.4.3.0.nupkg.sha512",
+    "C:\\Users\\J63443\\.nuget\\packages\\corvus.uritemplates\\2.2.0\\corvus.uritemplates.2.2.0.nupkg.sha512",
+    "C:\\Users\\J63443\\.nuget\\packages\\microsoft.extensions.objectpool\\8.0.8\\microsoft.extensions.objectpool.8.0.8.nupkg.sha512",
+    "C:\\Users\\J63443\\.nuget\\packages\\nodatime\\3.2.1\\nodatime.3.2.1.nupkg.sha512",
+    "C:\\Users\\J63443\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\J63443\\.nuget\\packages\\system.collections.immutable\\9.0.0\\system.collections.immutable.9.0.0.nupkg.sha512",
+    "C:\\Users\\J63443\\.nuget\\packages\\system.io.pipelines\\9.0.0\\system.io.pipelines.9.0.0.nupkg.sha512",
+    "C:\\Users\\J63443\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\J63443\\.nuget\\packages\\system.text.encodings.web\\9.0.0\\system.text.encodings.web.9.0.0.nupkg.sha512",
+    "C:\\Users\\J63443\\.nuget\\packages\\system.text.json\\9.0.0\\system.text.json.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
