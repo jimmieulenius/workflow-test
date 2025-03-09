@@ -36,7 +36,7 @@ jobs:
           Write-Host 'Add other actions to build,'
           Write-Host 'test, and deploy your project.'
 
-          Import-Module ./scripts/DotNetCi.psm1
+          Import-Module './scripts/DotNetCI.psm1'
 
           New-Greet `
             -Name 'GitHub Actions'
