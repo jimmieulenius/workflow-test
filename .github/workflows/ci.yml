@@ -35,5 +35,5 @@ jobs:
         run: |
           Import-Module './scripts/DotNetCI.psm1'
 
-          New-Greet `
-            -Name 'GitHub Actions'
+          Test-ProjectAssets `
+            -Path './src/ConsoleApp1' `
