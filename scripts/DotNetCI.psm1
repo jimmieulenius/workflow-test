@@ -9,7 +9,6 @@ function Test-ProjectAssets {
     )
 
     Get-ChildItem `
-        -Path $Path `
-        -Directory `
-        -Recurse
+        -Path "$Path/obj" `
+        -File
 }
