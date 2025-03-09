@@ -33,9 +33,6 @@ jobs:
       - name: Run a multi-line script
         shell: pwsh
         run: |
-          Write-Host 'Add other actions to build,'
-          Write-Host 'test, and deploy your project.'
-
           Import-Module './scripts/DotNetCI.psm1'
 
           New-Greet `

@@ -1,9 +1,15 @@
-function New-Greet {
+function Test-ProjectAssets {
     param(
+        [Parameter(Mandatory = $true)]
         [String]
-        $Name
+        $Path,
+
+        [String]
+        $Prefix
     )
 
-    "Hello, $Name!" `
-    | Out-Default
+    Get-ChildItem `
+        -Path $Path `
+        -Directory `
+        -Recurse
 }
