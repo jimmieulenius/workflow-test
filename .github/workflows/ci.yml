@@ -35,6 +35,5 @@ jobs:
         run: |
           Import-Module './scripts/CI.DotNet.psm1'
 
-          Test-ProjectAsset `
-            -Path './src/ClassLibrary1' `
-            -AllowPrerelease
+          Test-ProjectAssets `
+            -Path './src/ConsoleApp1'
