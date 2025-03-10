@@ -55,10 +55,7 @@ function Test-ProjectAssets {
             }
 
             if ($invalidAsset.Count -gt 0) {
-                throw @"
-Invalid asset(s) found in project.assets.json:
-    $($invalidAsset -join "$([Environment]::NewLine)    ")
-"@
+                throw "Invalid asset(s) found in project.assets.json:$([Environment]::NewLine)    $($invalidAsset -join "$([Environment]::NewLine)    ")"
             }
         }
     }
