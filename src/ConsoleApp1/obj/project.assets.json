@@ -207,7 +207,7 @@
           "buildTransitive/net8.0/System.Text.Json.targets": {}
         }
       },
-      "ClassLibrary1/1.0.0-preview": {
+      "ClassLibrary1/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
@@ -569,7 +569,7 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "ClassLibrary1/1.0.0-preview": {
+    "ClassLibrary1/1.0.0": {
       "type": "project",
       "path": "../ClassLibrary1/ClassLibrary1.csproj",
       "msbuildProject": "../ClassLibrary1/ClassLibrary1.csproj"
@@ -577,7 +577,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "ClassLibrary1 >= 1.0.0-preview",
+      "ClassLibrary1 >= 1.0.0",
       "Corvus.Json.ExtendedTypes >= 4.3.0"
     ]
   },
@@ -585,7 +585,7 @@
     "C:\\Users\\J63443\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.1-preview",
+    "version": "1.0.1",
     "restore": {
       "projectUniqueName": "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",

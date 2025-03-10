@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ClassLibrary1\\ClassLibrary1.csproj": {
-      "version": "1.0.0-preview",
+      "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\J63443\\OneDrive - E.ON\\Source\\personal\\workflow-test\\src\\ClassLibrary1\\ClassLibrary1.csproj",
         "projectName": "ClassLibrary1",
