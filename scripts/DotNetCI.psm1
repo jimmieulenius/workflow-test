@@ -29,7 +29,7 @@ function Test-ProjectAssets {
                             $name = $components[0]
                             $version = $components[1]
 
-                            if ($version -contains '-') {
+                            if ($version -like '*-*') {
                                 throw "Prerelease version '$version' detected in '$name'"
                             }
                         }
