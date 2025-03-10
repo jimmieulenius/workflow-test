@@ -35,5 +35,7 @@ jobs:
         run: |
           Import-Module './scripts/CI.DotNet.psm1'
 
+          $ErrorActionPreference = 'Continue'
+
           Test-ProjectAsset `
             -Path './src/ConsoleApp1'
