@@ -37,6 +37,7 @@ function Test-ProjectAssets {
                             foreach ($filterItem in $Filter) {
                                 if ($name -ilike $filterItem) {
                                     $shouldProcess = $true
+
                                     break
                                 }
                             }
@@ -56,7 +57,7 @@ function Test-ProjectAssets {
             if ($invalidAsset.Count -gt 0) {
                 throw @"
 Invalid asset(s) found in project.assets.json:
-    $($invalidAsset -join "$([Environment.NewLine])    ")
+    $($invalidAsset -join "$([Environment]::NewLine)    ")
 "@
             }
         }
