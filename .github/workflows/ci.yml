@@ -36,7 +36,4 @@ jobs:
           Import-Module './scripts/CI.DotNet.psm1'
 
           Test-ProjectAssets `
-            -Path './src/ConsoleApp1' `
-            -Filter @(
-              'Class*'
-            )
+            -Path './src/ClassLibrary1'
