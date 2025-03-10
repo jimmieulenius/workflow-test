@@ -8,7 +8,7 @@ function Test-ProjectAssets {
         $AllowPrerelease,
 
         [String]
-        $Prefix
+        $Filter
     )
 
     if (-not $AllowPrerelease) {
@@ -24,9 +24,13 @@ function Test-ProjectAssets {
                 if ($_.Value) {
                     $_.Value.GetEnumerator() `
                     | ForEach-Object {
-                        if ([String]::IsNullOrEmpty($Prefix) -or $_.Key.StartsWith($Prefix)) {
-                            $components = $_.Key -split '/'
-                            $name = $components[0]
+                        $components = $_.Key -split '/'
+                        $name = $components[0]
+
+                        if (
+                            ([String]::IsNullOrEmpty($Filter)) `
+                            -or ($_.Key -ilike $Filter) `
+                        ) {
                             $version = $components[1]
 
                             if ($version -like '*-*') {
