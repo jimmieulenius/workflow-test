@@ -77,11 +77,9 @@ function Test-ProjectAsset {
                             Test-Filter `
                                 -Value $name
                         ) {
-                            $version = $component[1]
-
                             Test-PrereleaseVersion `
                                 -Name $name `
-                                -Version $version
+                                -Version $component[1]
                         }
 
                         if ($_.Value.dependencies) {

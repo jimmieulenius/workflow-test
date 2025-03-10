@@ -38,4 +38,5 @@ jobs:
           $ErrorActionPreference = 'Continue'
 
           Test-ProjectAsset `
-            -Path './src/ConsoleApp1'
+            -Path './src/ConsoleApp1' `
+            -AllowPrerelease
