@@ -1,4 +1,4 @@
-function Test-ProjectAssets {
+function Test-ProjectAsset {
     param(
         [Parameter(Mandatory = $true)]
         [String]
