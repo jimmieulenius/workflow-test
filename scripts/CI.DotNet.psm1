@@ -58,6 +58,10 @@ function Test-ProjectAssets {
         | ConvertFrom-Json `
             -AsHashtable
 
+        if ($contentObject.project.version -like '*-*') {
+            Write-Error "Invalid project version found in project.assets.json: $($contentObject.project.version)"
+        }
+
         if ($contentObject.targets) {
             $invalidAsset = [System.Collections.Generic.List[String]]::new()
 
@@ -69,30 +73,11 @@ function Test-ProjectAssets {
                         $component = $_.Key -split '/'
                         $name = $component[0]
 
-                        # $shouldProcess = $true
-
-                        # if ($Filter) {
-                        #     $shouldProcess = $false
-
-                        #     foreach ($filterItem in $Filter) {
-                        #         if ($name -ilike $filterItem) {
-                        #             $shouldProcess = $true
-
-                        #             break
-                        #         }
-                        #     }
-                        # }
-
-                        # if ($shouldProcess) {
                         if (
                             Test-Filter `
                                 -Value $name
                         ) {
                             $version = $component[1]
-
-                            # if ($version -like '*-*') {
-                            #     $invalidAsset.Add($_.Key)
-                            # }
 
                             Test-PrereleaseVersion `
                                 -Name $name `
@@ -117,7 +102,7 @@ function Test-ProjectAssets {
             }
 
             if ($invalidAsset.Count -gt 0) {
-                throw "Invalid asset(s) found in project.assets.json:$([Environment]::NewLine)    $($invalidAsset -join "$([Environment]::NewLine)    ")"
+                Write-Error "Invalid asset(s) found in project.assets.json:$([Environment]::NewLine)    $($invalidAsset -join "$([Environment]::NewLine)    ")"
             }
         }
     }
