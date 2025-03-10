@@ -11,6 +11,46 @@ function Test-ProjectAssets {
         $Filter
     )
 
+    function Test-Filter {
+        param (
+            [Parameter(Mandatory = $true)]
+            [String]
+            $Value
+        )
+
+        if ($Filter) {
+            $result = $false
+
+            foreach ($filterItem in $Filter) {
+                if ($Value -ilike $filterItem) {
+                    $result = $true
+
+                    break
+                }
+            }
+
+            return $result
+        }
+
+        return $true
+    }
+
+    function Test-PrereleaseVersion {
+        param (
+            [Parameter(Mandatory = $true)]
+            [String]
+            $Name,
+
+            [Parameter(Mandatory = $true)]
+            [String]
+            $Version
+        )
+
+        if ($Version -like '*-*') {
+            $invalidAsset.Add("$Name/$Version")
+        }
+    }
+
     if (-not $AllowPrerelease) {
         $contentObject = Get-Content `
             -Path "$Path/obj/project.assets.json" `
@@ -29,25 +69,47 @@ function Test-ProjectAssets {
                         $component = $_.Key -split '/'
                         $name = $component[0]
 
-                        $shouldProcess = $true
+                        # $shouldProcess = $true
 
-                        if ($Filter) {
-                            $shouldProcess = $false
+                        # if ($Filter) {
+                        #     $shouldProcess = $false
 
-                            foreach ($filterItem in $Filter) {
-                                if ($name -ilike $filterItem) {
-                                    $shouldProcess = $true
+                        #     foreach ($filterItem in $Filter) {
+                        #         if ($name -ilike $filterItem) {
+                        #             $shouldProcess = $true
 
-                                    break
-                                }
-                            }
-                        }
+                        #             break
+                        #         }
+                        #     }
+                        # }
 
-                        if ($shouldProcess) {
+                        # if ($shouldProcess) {
+                        if (
+                            Test-Filter `
+                                -Value $name
+                        ) {
                             $version = $component[1]
 
-                            if ($version -like '*-*') {
-                                $invalidAsset.Add($_.Key)
+                            # if ($version -like '*-*') {
+                            #     $invalidAsset.Add($_.Key)
+                            # }
+
+                            Test-PrereleaseVersion `
+                                -Name $name `
+                                -Version $version
+                        }
+
+                        if ($_.Value.dependencies) {
+                            $_.Value.dependencies.GetEnumerator() `
+                            | ForEach-Object {
+                                if (
+                                    Test-Filter `
+                                        -Value $_.Key
+                                ) {
+                                    Test-PrereleaseVersion `
+                                        -Name $_.Key `
+                                        -Version $_.Value
+                                }
                             }
                         }
                     }
