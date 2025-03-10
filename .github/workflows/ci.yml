@@ -33,9 +33,11 @@ jobs:
       - name: Run a multi-line script
         shell: pwsh
         run: |
-          Import-Module './scripts/DotNetCI.psm1'
+          Import-Module './scripts/CI.DotNet.psm1'
 
           Test-ProjectAssets `
             -Path './src/ConsoleApp1' `
-            -Filter '*1' `
-            -AllowPrerelease
+            -Filter @(
+              'Console*',
+              'Class*'
+            )
