@@ -24,11 +24,15 @@ function Test-ProjectAssets {
                 if ($_.Value) {
                     $_.Value.GetEnumerator() `
                     | ForEach-Object {
-                        $version = $_.Key -split '/' `
-                        | Select-Object `
-                            -Last 1
+                        if ([String]::IsNullOrEmpty($Prefix) -or $_.Key.StartsWith($Prefix)) {
+                            $components = $_.Key -split '/'
+                            $name = $components[0]
+                            $version = $components[1]
 
-                        $version
+                            if ($version -contains '-') {
+                                throw "Prerelease version '$version' detected in '$name'"
+                            }
+                        }
                     }
                 }
             }
