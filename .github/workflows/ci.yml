@@ -38,5 +38,5 @@ jobs:
           Test-ProjectAssets `
             -Path './src/ConsoleApp1' `
             -Filter @(
-              'Console*'
+              'Class*'
             )
