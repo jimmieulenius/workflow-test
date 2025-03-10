@@ -29,7 +29,7 @@ function Test-ProjectAssets {
 
                         if (
                             ([String]::IsNullOrEmpty($Filter)) `
-                            -or ($_.Key -ilike $Filter) `
+                            -or ($name -ilike $Filter) `
                         ) {
                             $version = $components[1]
 
