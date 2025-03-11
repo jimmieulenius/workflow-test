@@ -1,0 +1,20 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - main
+      - dev/*
+      - feature/*
+      - hotfix/*
+
+jobs:
+  semantic_release:
+    uses: ./.github/workflows/.semantic-release.yaml
+
+  publish:
+    needs: semantic_release
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo ${{ needs.semantic_release.outputs.new_release_version }}
