@@ -44,14 +44,16 @@ jobs:
             Path = './src/ClassLibrary1'
           }
 
-          $prerelease = [Bool]:Parse('${{inputs.prerelease}}')
+          $prerelease = [Bool]::Parse('${{inputs.prerelease}}')
 
           if ($prerelease) {
             $suffix = '${{inputs.suffix}}'
 
-            if (-not [String]::IsNullOrEmpty($suffix)) {
-              $parameterObject.Suffix = $suffix
+            if ([String]::IsNullOrEmpty($suffix)) {
+              $suffix = '${{github.run_number}}'
             }
+
+            $parameterObject.Suffix = $suffix
           }
 
           Publish-Package @parameterObject
