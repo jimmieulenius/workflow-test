@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v4
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Publish package
         shell: pwsh
         run: |
           Import-Module './scripts/CI.DotNet.psm1'
