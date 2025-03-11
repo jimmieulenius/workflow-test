@@ -13,10 +13,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      prerelease:
-        type: boolean
-        # description: 'Whether to publish the package as a prerelease'
-        required: false
+      # prerelease:
+      #   type: boolean
+      #   # description: 'Whether to publish the package as a prerelease'
+      #   required: false
       suffix:
         type: string
         # description: 'The suffix to append to the version number'
@@ -44,7 +44,7 @@ jobs:
             Path = './src/ClassLibrary1'
           }
 
-          $prerelease = [Bool]::Parse('${{inputs.prerelease}}')
+          $prerelease = '${{github.event_name}}' -ieq 'workflow_dispatch'
 
           if ($prerelease) {
             $suffix = '${{inputs.suffix}}'
