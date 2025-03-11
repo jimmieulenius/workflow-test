@@ -115,6 +115,9 @@ function Publish-Package {
         [Version]
         $Version,
 
+        [String]
+        $Configuration = 'Release',
+
         # [Parameter(ParameterSetName = 'Prerelease')]
         # [Switch]
         # $Prerelease,
@@ -148,5 +151,20 @@ function Publish-Package {
 
     $versionString = "$Version$(((-not [String]::IsNullOrEmpty($Suffix)) ? "-preview-$Suffix" : $null))"
 
-    $versionString
+    try {
+        $currentLocation = (Get-Location).Path
+
+        Set-Location `
+            -Path $Path
+
+        dotnet build `
+            --configuration $Configuration `
+            /p:Version=$versionString
+    }
+    finally {
+        if ($currentLocation) {
+            Set-Location `
+                -Path $currentLocation
+        }
+    }
 }
