@@ -2,7 +2,6 @@ name: Semantic Release
 
 on:
   workflow_call:
-    secrets: inherit
     outputs:
       new_release_version:
         value: ${{ jobs.semantic_release.outputs.new_release_version }}
