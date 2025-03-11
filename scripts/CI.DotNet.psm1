@@ -118,6 +118,12 @@ function Publish-Package {
         [String]
         $Configuration = 'Release',
 
+        [String]
+        $RegistryUri,
+
+        [String]
+        $RegistryApiKey = $Env:NUGET_API_KEY,
+
         # [Parameter(ParameterSetName = 'Prerelease')]
         # [Switch]
         # $Prerelease,
@@ -160,6 +166,19 @@ function Publish-Package {
         dotnet build `
             --configuration $Configuration `
             /p:Version=$versionString
+
+        dotnet pack `
+            --configuration $Configuration `
+            /p:Version=$versionString
+
+        dotnet nuget push `
+            "./bin/$Configuration/$(
+                Split-Path `
+                    -Path $Path `
+                    -LeafBase
+            ).$versionString.nupkg" `
+            --source $RegistryUri `
+            --api-key $RegistryApiKey
     }
     finally {
         if ($currentLocation) {

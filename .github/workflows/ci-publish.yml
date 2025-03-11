@@ -36,12 +36,15 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Publish package
+        env:
+          NUGET_API_KEY: ${{secrets.GITHUB_TOKEN}}
         shell: pwsh
         run: |
           Import-Module './scripts/CI.DotNet.psm1'
 
           $parameterObject = @{
             Path = './src/ClassLibrary1'
+            RegistryUri = 'https://nuget.pkg.github.com/${{github.repository_owner}}/index.json'
           }
 
           $prerelease = '${{github.event_name}}' -ieq 'workflow_dispatch'
