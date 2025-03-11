@@ -105,3 +105,48 @@ function Test-ProjectAsset {
         }
     }
 }
+
+function Publish-Package {
+    param (
+        [Parameter(Mandatory = $true)]
+        [String]
+        $Path,
+
+        [Version]
+        $Version,
+
+        # [Parameter(ParameterSetName = 'Prerelease')]
+        # [Switch]
+        # $Prerelease,
+
+        # [Parameter(ParameterSetName = 'Prerelease')]
+        [String]
+        $Suffix
+    )
+
+    # $Prerelease = $true
+    # $Suffix = 'aaa'
+
+    if (-not $Version) {
+        $Version = (
+            git tag `
+                --sort=-v:refname `
+        | Select-Object `
+            -First 1
+        )?.Substring(1) -as [Version]
+
+        if ($Version) {
+            $Version = [Version]::new(
+                $Version.Major,
+                $Version.Minor,
+                $Version.Build + 1
+            )
+        } else {
+            $Version = '0.0.1' -as [Version]
+        }
+    }
+
+    $versionString = "$Version$(((-not [String]::IsNullOrEmpty($Suffix)) ? "-preview-$Suffix" : $null))"
+
+    $versionString
+}
