@@ -9,15 +9,44 @@ on:
       - hotfix/*
 
 jobs:
+  init:
+    runs-on: ubuntu-latest
+
+    outputs:
+      allow_prerelease: ${{ steps.set_values.outputs.allow_prerelease }}
+
+    steps:
+      - name: Set values
+        id: set_values
+        run: |
+          echo "allow_prerelease=${{github.ref != 'refs/heads/main'}}" >> $GITHUB_ENV
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        shell: pwsh
+        run: |
+          Import-Module './scripts/CI.DotNet.psm1'
+
+          Build-Package `
+            -Path './src/ClassLibrary1'
+
   semantic_release:
     uses: ./.github/workflows/.semantic-release.yaml
     secrets: inherit
 
   publish:
-    if: "needs.semantic_release.outputs.new_release_published == 'true'"
+    if: needs.semantic_release.outputs.new_release_published == 'true'
 
-    needs: semantic_release
+    needs:
+      - init
+      - semantic_release
+
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo ${{ needs.semantic_release.outputs.new_release_version }}
+      - run: echo ${{ needs.init.outputs.allow_prerelease }}
