@@ -21,7 +21,7 @@ jobs:
         id: set_values
 
         run: |
-          echo "allow_prerelease=${{github.ref != 'refs/heads/main'}}" >> $GITHUB_OUTPUT
+          echo "allow_prerelease=${{ github.ref != 'refs/heads/main' }}" >> $GITHUB_OUTPUT
 
   build:
     needs: init
@@ -59,4 +59,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo ${{ needs.init.outputs.allow_prerelease }}
+      - uses: actions/checkout@v4
+
+      - name: Publish
+        
+        shell: pwsh
+
+        run: |
+          Import-Module './scripts/CICD.DotNet.psm1'
+
+          Build-Package `
+            -Path './src/ClassLibrary1' `
+            -Version ${{ needs.semantic_release.outputs.new_release_version }} `
+            -AllowPrerelease:$${{ needs.init.outputs.allow_prerelease }} `
+            -Publish `
+            -RegistryUri 'https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json' `
+            -RegistryApiKey ${{ secrets.GITHUB_TOKEN }}
+
+          
