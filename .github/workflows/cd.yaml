@@ -21,7 +21,7 @@ jobs:
         id: set_values
 
         run: |
-          echo "allow_prerelease=${{github.ref != 'refs/heads/main'}}" >> $GITHUB_ENV
+          echo "allow_prerelease=${{github.ref != 'refs/heads/main'}}" >> $GITHUB_OUTPUT
 
   build:
     needs: init
