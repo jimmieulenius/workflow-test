@@ -112,7 +112,7 @@ function Build-Package {
         [String]
         $Path,
 
-        [Version]
+        [String]
         $Version,
 
         [String]
