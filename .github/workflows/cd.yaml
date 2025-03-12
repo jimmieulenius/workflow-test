@@ -9,15 +9,71 @@ on:
       - hotfix/*
 
 jobs:
-  semantic_release:
-    uses: ./.github/workflows/.semantic-release.yaml
-    secrets: inherit
+  init:
+    runs-on: ubuntu-latest
 
-  publish:
-    if: "needs.semantic_release.outputs.new_release_published == 'true'"
+    outputs:
+      allow_prerelease: ${{ steps.set_values.outputs.allow_prerelease }}
 
-    needs: semantic_release
+    steps:
+      - name: Set values
+
+        id: set_values
+
+        run: |
+          echo "allow_prerelease=${{ github.ref != 'refs/heads/main' }}" >> $GITHUB_OUTPUT
+
+  build:
+    needs: init
+
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo ${{ needs.semantic_release.outputs.new_release_version }}
+      - uses: actions/checkout@v4
+
+      - name: Build
+
+        shell: pwsh
+
+        run: |
+          Import-Module './scripts/CICD.DotNet.psm1'
+
+          Build-Package `
+            -Path './src/ClassLibrary1' `
+            -AllowPrerelease:$${{ needs.init.outputs.allow_prerelease }}
+
+  semantic_release:
+    needs: build
+
+    uses: ./.github/workflows/.semantic-release.yaml
+
+    secrets: inherit
+
+  publish:
+    if: needs.semantic_release.outputs.new_release_published == 'true'
+
+    needs:
+      - init
+      - semantic_release
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish
+        
+        shell: pwsh
+
+        run: |
+          Import-Module './scripts/CICD.DotNet.psm1'
+
+          Build-Package `
+            -Path './src/ClassLibrary1' `
+            -Version ${{ needs.semantic_release.outputs.new_release_version }} `
+            -AllowPrerelease:$${{ needs.init.outputs.allow_prerelease }} `
+            -Publish `
+            -RegistryUri 'https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json' `
+            -RegistryApiKey ${{ secrets.GITHUB_TOKEN }}
+
+          

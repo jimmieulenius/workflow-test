@@ -106,7 +106,7 @@ function Test-ProjectAsset {
     }
 }
 
-function Publish-Package {
+function Build-Package {
     param (
         [Parameter(Mandatory = $true)]
         [String]
@@ -118,9 +118,11 @@ function Publish-Package {
         [String]
         $Configuration = 'Release',
 
+        [Parameter(ParameterSetName = 'Publish')]
         [String]
         $RegistryUri,
 
+        [Parameter(ParameterSetName = 'Publish')]
         [String]
         $RegistryApiKey = $Env:NUGET_API_KEY,
 
@@ -129,56 +131,103 @@ function Publish-Package {
         # $Prerelease,
 
         # [Parameter(ParameterSetName = 'Prerelease')]
-        [String]
-        $Suffix
+        # [String]
+        # $Suffix
+
+        [Parameter(ParameterSetName = 'Publish')]
+        [Switch]
+        $Publish,
+
+        [Switch]
+        $AllowPrerelease
     )
 
     # $Prerelease = $true
     # $Suffix = 'aaa'
 
-    if (-not $Version) {
-        $Version = (
-            git tag `
-                --sort=-v:refname `
-        | Select-Object `
-            -First 1
-        )?.Substring(1) -as [Version]
+    # if (-not $Version) {
+    #     $Version = (
+    #         git tag `
+    #             --sort=-v:refname `
+    #     | Select-Object `
+    #         -First 1
+    #     )?.Substring(1) -as [Version]
 
-        if ($Version) {
-            $Version = [Version]::new(
-                $Version.Major,
-                $Version.Minor,
-                $Version.Build + 1
-            )
-        } else {
-            $Version = '0.0.1' -as [Version]
-        }
-    }
+    #     if ($Version) {
+    #         $Version = [Version]::new(
+    #             $Version.Major,
+    #             $Version.Minor,
+    #             $Version.Build + 1
+    #         )
+    #     } else {
+    #         $Version = '0.0.1' -as [Version]
+    #     }
+    # }
 
-    $versionString = "$Version$(((-not [String]::IsNullOrEmpty($Suffix)) ? "-preview-$Suffix" : $null))"
+    # $versionString = "$Version$(((-not [String]::IsNullOrEmpty($Suffix)) ? "-preview-$Suffix" : $null))"
 
     try {
+        $currentErrorActionPreference = $ErrorActionPreference
+        $ErrorActionPreference = 'Continue'
+
+        try {
+            Test-ProjectAsset `
+                -Path $Path `
+                -AllowPrerelease:$AllowPrerelease
+        }
+        finally {
+            $ErrorActionPreference = $currentErrorActionPreference
+        }
+
         $currentLocation = (Get-Location).Path
 
         Set-Location `
             -Path $Path
 
-        dotnet build `
-            --configuration $Configuration `
-            /p:Version=$versionString
+        $arguments = @(
+            '--configuration',
+            $Configuration
+        )
 
-        dotnet pack `
-            --configuration $Configuration `
-            /p:Version=$versionString
+        if (-not [String]::IsNullOrEmpty($Version)) {
+            $arguments += "/p:Version=$Version"
+        }
 
-        dotnet nuget push `
-            "./bin/$Configuration/$(
-                Split-Path `
-                    -Path $Path `
-                    -LeafBase
-            ).$versionString.nupkg" `
-            --source $RegistryUri `
-            --api-key $RegistryApiKey
+        dotnet build $arguments
+
+        # dotnet build `
+        #     --configuration $Configuration `
+        #     /p:Version=$versionString
+
+        if ($Publish) {
+            dotnet pack $arguments
+
+            dotnet nuget push `
+                "./bin/$Configuration/$(
+                    Split-Path `
+                        -Path $Path `
+                        -LeafBase
+                )$(
+                    (-not [String]::IsNullOrEmpty($Version)) `
+                        ? ".$Version" `
+                        : $null
+                ).nupkg" `
+                --source $RegistryUri `
+                --api-key $RegistryApiKey
+        }
+
+        # dotnet pack `
+        #     --configuration $Configuration `
+        #     /p:Version=$versionString
+
+        # dotnet nuget push `
+        #     "./bin/$Configuration/$(
+        #         Split-Path `
+        #             -Path $Path `
+        #             -LeafBase
+        #     ).$versionString.nupkg" `
+        #     --source $RegistryUri `
+        #     --api-key $RegistryApiKey
     }
     finally {
         if ($currentLocation) {

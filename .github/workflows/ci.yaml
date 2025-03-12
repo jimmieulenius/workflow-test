@@ -29,7 +29,7 @@ jobs:
       - name: Run a multi-line script
         shell: pwsh
         run: |
-          Import-Module './scripts/CI.DotNet.psm1'
+          Import-Module './scripts/CICD.DotNet.psm1'
 
           $ErrorActionPreference = 'Continue'
 
