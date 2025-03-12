@@ -17,26 +17,36 @@ jobs:
 
     steps:
       - name: Set values
+
         id: set_values
+
         run: |
           echo "allow_prerelease=${{github.ref != 'refs/heads/main'}}" >> $GITHUB_ENV
 
   build:
+    needs: init
+
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Build
+
         shell: pwsh
+
         run: |
-          Import-Module './scripts/CI.DotNet.psm1'
+          Import-Module './scripts/CICD.DotNet.psm1'
 
           Build-Package `
-            -Path './src/ClassLibrary1'
+            -Path './src/ClassLibrary1' `
+            -AllowPrerelease:$${{ needs.init.outputs.allow_prerelease }}
 
   semantic_release:
+    needs: build
+
     uses: ./.github/workflows/.semantic-release.yaml
+
     secrets: inherit
 
   publish:
