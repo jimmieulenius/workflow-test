@@ -21,7 +21,8 @@
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {},
-          "https://git.eon-cds.de/api/v4/groups/47556/-/packages/nuget/index.json": {}
+          "https://git.eon-cds.de/api/v4/groups/47556/-/packages/nuget/index.json": {},
+          "https://nuget.pkg.github.com/jimmieulenius/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -86,7 +87,8 @@
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {},
-          "https://git.eon-cds.de/api/v4/groups/47556/-/packages/nuget/index.json": {}
+          "https://git.eon-cds.de/api/v4/groups/47556/-/packages/nuget/index.json": {},
+          "https://nuget.pkg.github.com/jimmieulenius/index.json": {}
         },
         "frameworks": {
           "net8.0": {

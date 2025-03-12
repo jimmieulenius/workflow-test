@@ -17,24 +17,18 @@ jobs:
 
     steps:
       - name: Set values
-
         id: set_values
-
         run: |
           echo "allow_prerelease=${{ github.ref != 'refs/heads/main' }}" >> $GITHUB_OUTPUT
 
   build:
     needs: init
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
       - name: Build
-
         shell: pwsh
-
         run: |
           Import-Module './scripts/CICD.DotNet.psm1'
 
@@ -44,30 +38,22 @@ jobs:
 
   semantic_release:
     needs: build
-
     uses: ./.github/workflows/.semantic-release.yaml
-
     secrets: inherit
 
   publish:
     if: needs.semantic_release.outputs.new_release_published == 'true'
-
     needs:
       - init
       - semantic_release
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
+      
       - name: Publish
-
         env:
           NUGET_API_KEY: ${{ secrets.GITHUB_TOKEN }}
-        
         shell: pwsh
-
         run: |
           Import-Module './scripts/CICD.DotNet.psm1'
 
