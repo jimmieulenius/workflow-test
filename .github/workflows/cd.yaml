@@ -35,6 +35,13 @@ jobs:
         run: |
           Import-Module './scripts/CICD.DotNet.psm1'
 
+          dotnet nuget add source `
+            --username ${{ github.repository_owner }} `
+            --password ${{ secrets.GITHUB_TOKEN }} `
+            --store-password-in-clear-text `
+            --name github `
+            "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+
           Build-Package `
             -Path '${{ env.TARGET_PATH }}' `
             -AllowPrerelease:$${{ needs.init.outputs.allow_prerelease }}
@@ -59,6 +66,13 @@ jobs:
         shell: pwsh
         run: |
           Import-Module './scripts/CICD.DotNet.psm1'
+
+          dotnet nuget add source `
+            --username ${{ github.repository_owner }} `
+            --password ${{ secrets.GITHUB_TOKEN }} `
+            --store-password-in-clear-text `
+            --name github `
+            "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
 
           Build-Package `
             -Path '${{ env.TARGET_PATH }}' `
