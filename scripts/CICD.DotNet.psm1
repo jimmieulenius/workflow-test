@@ -207,7 +207,7 @@ function Build-Package {
             -ErrorVariable 'errorOutput'
 
         if ($errorOutput) {
-            return 1
+            throw
         }
 
         # dotnet build `
