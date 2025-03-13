@@ -1,3 +1,10 @@
+## [0.0.5](https://github.com/jimmieulenius/workflow-test/compare/v0.0.4...v0.0.5) (2025-03-13)
+
+
+### Bug Fixes
+
+* tyhej ([c18ca2f](https://github.com/jimmieulenius/workflow-test/commit/c18ca2f4cf45b877ba687b81c7aae185bc7ce49e))
+
 ## [0.0.4](https://github.com/jimmieulenius/workflow-test/compare/v0.0.3...v0.0.4) (2025-03-13)
 
 
