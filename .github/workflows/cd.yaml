@@ -47,7 +47,8 @@ jobs:
 
           Build-Package `
             -Path '${{ env.TARGET_PATH }}' `
-            -AllowPrerelease:$${{ needs.init.outputs.allow_prerelease }}
+            -AllowPrerelease:$${{ needs.init.outputs.allow_prerelease }} `
+            -ProjectAssetFilter 'ClassLibrary*'
 
   semantic_release:
     needs: build
@@ -84,7 +85,8 @@ jobs:
             -Path '${{ env.TARGET_PATH }}' `
             -Version ${{ needs.semantic_release.outputs.new_release_version }} `
             -AllowPrerelease:$${{ needs.init.outputs.allow_prerelease }} `
+            -ProjectAssetFilter 'ClassLibrary*' `
             -Publish `
-            -RegistryUri 'https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json'
+            -NuGetUri 'https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json'
 
           

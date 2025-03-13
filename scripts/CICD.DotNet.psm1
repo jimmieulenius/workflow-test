@@ -133,11 +133,11 @@ function Build-Package {
 
         [Parameter(ParameterSetName = 'Publish')]
         [String]
-        $RegistryUri,
+        $NuGetUri,
 
         [Parameter(ParameterSetName = 'Publish')]
         [String]
-        $RegistryApiKey = $Env:NUGET_API_KEY,
+        $NuGetApiKey = $Env:NUGET_API_KEY,
 
         # [Parameter(ParameterSetName = 'Prerelease')]
         # [Switch]
@@ -152,7 +152,10 @@ function Build-Package {
         $Publish,
 
         [Switch]
-        $AllowPrerelease
+        $AllowPrerelease,
+
+        [String[]]
+        $ProjectAssetFilter
     )
 
     # $Prerelease = $true
@@ -204,6 +207,7 @@ function Build-Package {
         Test-ProjectAsset `
             -Path $Path `
             -AllowPrerelease:$AllowPrerelease `
+            -Filter $ProjectAssetFilter `
             -ErrorVariable 'errorOutput'
 
         if ($errorOutput) {
@@ -227,8 +231,13 @@ function Build-Package {
                         ? ".$Version" `
                         : $null
                 ).nupkg" `
-                --source $RegistryUri `
-                --api-key $RegistryApiKey
+                --source $NuGetUri `
+                --api-key $NuGetApiKey
+
+            dotnet publish `
+                -r win-x64 `
+                -c Release `
+                -o bin/win-x64
         }
 
         # dotnet pack `
