@@ -155,7 +155,20 @@ function Build-Package {
         $AllowPrerelease,
 
         [String[]]
-        $ProjectAssetFilter
+        $ProjectAssetFilter,
+
+        [Parameter(ParameterSetName = 'Publish')]
+        [ValidateSet(
+            'linux-x64',
+            'osx-x64',
+            'win-x64'
+        )]
+        [String[]]
+        $Runtime = @(
+            'linux-x64',
+            'osx-x64',
+            'win-x64'
+        )
     )
 
     # $Prerelease = $true
@@ -234,10 +247,13 @@ function Build-Package {
                 --source $NuGetUri `
                 --api-key $NuGetApiKey
 
-            dotnet publish `
-                -r win-x64 `
-                -c Release `
-                -o bin/win-x64
+            $Runtime `
+            | ForEach-Object {
+                dotnet publish `
+                    -r $_ `
+                    -c $Configuration `
+                    -o "bin/$Configuration/publish/$_"
+            }
         }
 
         # dotnet pack `
