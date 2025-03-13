@@ -175,10 +175,6 @@ function Build-Package {
     # $versionString = "$Version$(((-not [String]::IsNullOrEmpty($Suffix)) ? "-preview-$Suffix" : $null))"
 
     try {
-        Test-ProjectAsset `
-            -Path $Path `
-            -AllowPrerelease:$AllowPrerelease
-
         $currentLocation = (Get-Location).Path
 
         Set-Location `
@@ -194,6 +190,10 @@ function Build-Package {
         }
 
         dotnet build $arguments
+
+        Test-ProjectAsset `
+            -Path $Path `
+            -AllowPrerelease:$AllowPrerelease
 
         # dotnet build `
         #     --configuration $Configuration `
