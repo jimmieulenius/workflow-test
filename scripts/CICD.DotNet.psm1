@@ -52,6 +52,11 @@ function Test-ProjectAsset {
     }
 
     if (-not $AllowPrerelease) {
+        $Path = (
+            Resolve-Path `
+                -Path $Path
+        ).Path
+
         $contentObject = Get-Content `
             -Path "$Path/obj/project.assets.json" `
             -Raw `
@@ -176,6 +181,11 @@ function Build-Package {
 
     try {
         $currentLocation = (Get-Location).Path
+
+        $Path = (
+            Resolve-Path `
+                -Path $Path
+        ).Path
 
         Set-Location `
             -Path $Path
