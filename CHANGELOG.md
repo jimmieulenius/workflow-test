@@ -1,3 +1,10 @@
+## [0.0.8](https://github.com/jimmieulenius/workflow-test/compare/v0.0.7...v0.0.8) (2025-03-13)
+
+
+### Bug Fixes
+
+* rfvbn ([cc0cf06](https://github.com/jimmieulenius/workflow-test/commit/cc0cf06d933ef42025412cba7037e8566426fc8c))
+
 ## [0.0.7](https://github.com/jimmieulenius/workflow-test/compare/v0.0.6...v0.0.7) (2025-03-13)
 
 
