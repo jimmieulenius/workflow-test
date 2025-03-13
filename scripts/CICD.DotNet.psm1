@@ -58,50 +58,58 @@ function Test-ProjectAsset {
         | ConvertFrom-Json `
             -AsHashtable
 
-        if ($contentObject.project.version -like '*-*') {
-            Write-Error "Invalid project version found in project.assets.json: $($contentObject.project.version)"
-        }
+        $currentErrorActionPreference = $ErrorActionPreference
+        $ErrorActionPreference = 'Continue'
 
-        if ($contentObject.targets) {
-            $invalidAsset = [System.Collections.Generic.List[String]]::new()
+        try {
+            if ($contentObject.project.version -like '*-*') {
+                Write-Error "Invalid project version found in project.assets.json: $($contentObject.project.version)"
+            }
 
-            $contentObject.targets.GetEnumerator() `
-            | ForEach-Object {
-                if ($_.Value) {
-                    $_.Value.GetEnumerator() `
-                    | ForEach-Object {
-                        $component = $_.Key -split '/'
-                        $name = $component[0]
+            if ($contentObject.targets) {
+                $invalidAsset = [System.Collections.Generic.List[String]]::new()
 
-                        if (
-                            Test-Filter `
-                                -Value $name
-                        ) {
-                            Test-PrereleaseVersion `
-                                -Name $name `
-                                -Version $component[1]
-                        }
+                $contentObject.targets.GetEnumerator() `
+                | ForEach-Object {
+                    if ($_.Value) {
+                        $_.Value.GetEnumerator() `
+                        | ForEach-Object {
+                            $component = $_.Key -split '/'
+                            $name = $component[0]
 
-                        if ($_.Value.dependencies) {
-                            $_.Value.dependencies.GetEnumerator() `
-                            | ForEach-Object {
-                                if (
-                                    Test-Filter `
-                                        -Value $_.Key
-                                ) {
-                                    Test-PrereleaseVersion `
-                                        -Name $_.Key `
-                                        -Version $_.Value
+                            if (
+                                Test-Filter `
+                                    -Value $name
+                            ) {
+                                Test-PrereleaseVersion `
+                                    -Name $name `
+                                    -Version $component[1]
+                            }
+
+                            if ($_.Value.dependencies) {
+                                $_.Value.dependencies.GetEnumerator() `
+                                | ForEach-Object {
+                                    if (
+                                        Test-Filter `
+                                            -Value $_.Key
+                                    ) {
+                                        Test-PrereleaseVersion `
+                                            -Name $_.Key `
+                                            -Version $_.Value
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
 
-            if ($invalidAsset.Count -gt 0) {
-                Write-Error "Invalid asset(s) found in project.assets.json:$([Environment]::NewLine)    $($invalidAsset -join "$([Environment]::NewLine)    ")"
+                if ($invalidAsset.Count -gt 0) {
+                    Write-Error "Invalid asset(s) found in project.assets.json:$([Environment]::NewLine)    $($invalidAsset -join "$([Environment]::NewLine)    ")"
+                }
             }
+        }
+        finally {
+            $ErrorActionPreference = $currentErrorActionPreference
         }
     }
 }
@@ -167,17 +175,9 @@ function Build-Package {
     # $versionString = "$Version$(((-not [String]::IsNullOrEmpty($Suffix)) ? "-preview-$Suffix" : $null))"
 
     try {
-        $currentErrorActionPreference = $ErrorActionPreference
-        $ErrorActionPreference = 'Continue'
-
-        try {
-            Test-ProjectAsset `
-                -Path $Path `
-                -AllowPrerelease:$AllowPrerelease
-        }
-        finally {
-            $ErrorActionPreference = $currentErrorActionPreference
-        }
+        Test-ProjectAsset `
+            -Path $Path `
+            -AllowPrerelease:$AllowPrerelease
 
         $currentLocation = (Get-Location).Path
 
