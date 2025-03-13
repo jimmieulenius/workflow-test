@@ -168,7 +168,11 @@ function Build-Package {
             'linux-x64',
             'osx-x64',
             'win-x64'
-        )
+        ),
+
+        [Parameter(ParameterSetName = 'Publish')]
+        [ScriptBlock]
+        $PublishAction
     )
 
     # $Prerelease = $true
@@ -249,10 +253,16 @@ function Build-Package {
 
             $Runtime `
             | ForEach-Object {
+                $PublishOutput = "bin/$Configuration/publish/$_"
+
                 dotnet publish `
                     -r $_ `
                     -c $Configuration `
-                    -o "bin/$Configuration/publish/$_"
+                    -o $PublishOutput
+
+                if ($PublishAction) {
+                    & $PublishAction
+                }
             }
         }
 

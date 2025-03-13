@@ -51,6 +51,7 @@ jobs:
             -ProjectAssetFilter 'ClassLibrary*'
 
   semantic_release:
+    name: Semantic Release
     needs: build
     uses: ./.github/workflows/.semantic-release.yaml
     secrets: inherit
@@ -87,6 +88,9 @@ jobs:
             -AllowPrerelease:$${{ needs.init.outputs.allow_prerelease }} `
             -ProjectAssetFilter 'ClassLibrary*' `
             -Publish `
-            -NuGetUri 'https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json'
+            -NuGetUri 'https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json' `
+            -PublishAction {
+              $PublishOutput
+            }
 
           
