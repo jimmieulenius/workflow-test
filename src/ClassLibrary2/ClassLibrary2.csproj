@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ClassLibrary1" Version="0.0.2-dev-test2.1" />
+    <PackageReference Include="ClassLibrary1" Version="0.0.1" />
   </ItemGroup>
 
 </Project>
