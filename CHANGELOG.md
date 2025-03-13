@@ -1,3 +1,12 @@
+## [0.0.7](https://github.com/jimmieulenius/workflow-test/compare/v0.0.6...v0.0.7) (2025-03-13)
+
+
+### Bug Fixes
+
+* ghghgj ([5711e20](https://github.com/jimmieulenius/workflow-test/commit/5711e2049a1b561eb516d271be304824796d2cfc))
+* tfugh ([d58c05a](https://github.com/jimmieulenius/workflow-test/commit/d58c05a00e7bded8399627b67b86cde849b44308))
+* ytfdgjhdg ([404d045](https://github.com/jimmieulenius/workflow-test/commit/404d04587744c65f9e156cb2f397e5af45515890))
+
 ## [0.0.6](https://github.com/jimmieulenius/workflow-test/compare/v0.0.5...v0.0.6) (2025-03-13)
 
 
