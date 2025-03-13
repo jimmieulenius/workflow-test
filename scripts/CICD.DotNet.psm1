@@ -253,12 +253,15 @@ function Build-Package {
 
             $Runtime `
             | ForEach-Object {
-                $PublishOutput = "bin/$Configuration/publish/$_"
+                $PublishOutput = (
+                    Resolve-Path `
+                        -Path "./bin/$Configuration/publish/$_"
+                ).Path
 
                 dotnet publish `
-                    -r $_ `
-                    -c $Configuration `
-                    -o $PublishOutput
+                    --runtime $_ `
+                    --configuration $Configuration `
+                    --output $PublishOutput
 
                 if ($PublishAction) {
                     & $PublishAction
