@@ -203,7 +203,12 @@ function Build-Package {
 
         Test-ProjectAsset `
             -Path $Path `
-            -AllowPrerelease:$AllowPrerelease
+            -AllowPrerelease:$AllowPrerelease `
+            -ErrorVariable 'errorOutput'
+
+        if ($errorOutput) {
+            throw $errorOutput
+        }
 
         # dotnet build `
         #     --configuration $Configuration `
