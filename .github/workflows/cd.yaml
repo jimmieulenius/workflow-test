@@ -30,17 +30,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build
+      - name: Add NuGet source
         shell: pwsh
         run: |
-          Import-Module './scripts/CICD.DotNet.psm1'
-
           dotnet nuget add source `
             --username ${{ github.repository_owner }} `
             --password ${{ secrets.GITHUB_TOKEN }} `
             --store-password-in-clear-text `
             --name github `
             "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+
+      - name: Build
+        shell: pwsh
+        run: |
+          Import-Module './scripts/CICD.DotNet.psm1'
 
           Build-Package `
             -Path '${{ env.TARGET_PATH }}' `
@@ -59,6 +62,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Add NuGet source
+        shell: pwsh
+        run: |
+          dotnet nuget add source `
+            --username ${{ github.repository_owner }} `
+            --password ${{ secrets.GITHUB_TOKEN }} `
+            --store-password-in-clear-text `
+            --name github `
+            "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
       
       - name: Publish
         env:
@@ -66,13 +79,6 @@ jobs:
         shell: pwsh
         run: |
           Import-Module './scripts/CICD.DotNet.psm1'
-
-          dotnet nuget add source `
-            --username ${{ github.repository_owner }} `
-            --password ${{ secrets.GITHUB_TOKEN }} `
-            --store-password-in-clear-text `
-            --name github `
-            "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
 
           Build-Package `
             -Path '${{ env.TARGET_PATH }}' `
