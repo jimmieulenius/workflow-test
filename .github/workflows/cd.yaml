@@ -90,6 +90,8 @@ jobs:
             -Publish `
             -NuGetUri 'https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json' `
             -PublishAction {
+              Write-Host "PublishOutput: $PublishOutput"
+
               $archivePath = "$PublishOutput.zip"
 
               Compress-Archive `
