@@ -90,7 +90,14 @@ jobs:
             -Publish `
             -NuGetUri 'https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json' `
             -PublishAction {
-              Write-Host "Publishing package: $PublishOutput"
+              $archivePath = "$PublishOutput.zip"
+
+              Compress-Archive `
+                -Path $PublishOutput `
+                -DestinationPath $archivePath `
+                -Force
+
+              gh release upload '${{ github.event.release.tag_name }}' $archivePath
             }
 
           

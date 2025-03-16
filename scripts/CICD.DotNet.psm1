@@ -253,10 +253,9 @@ function Build-Package {
 
             $Runtime `
             | ForEach-Object {
-                $PublishOutput = (
-                    Resolve-Path `
-                        -Path "./bin/$Configuration/publish/$_"
-                ).Path
+                $PublishOutput = $ExecutionContext.SessionState.Provider.Path.GetUnresolvedProviderPathFromPSPath(
+                    "./bin/$Configuration/publish/$_"
+                )
 
                 dotnet publish `
                     --runtime $_ `
