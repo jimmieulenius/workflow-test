@@ -1,3 +1,10 @@
+## [0.0.12](https://github.com/jimmieulenius/workflow-test/compare/v0.0.11...v0.0.12) (2025-03-13)
+
+
+### Bug Fixes
+
+* dfdfd ([b37179f](https://github.com/jimmieulenius/workflow-test/commit/b37179f9cb1ad2f02cc93c7b1532a7df8cf73046))
+
 ## [0.0.11](https://github.com/jimmieulenius/workflow-test/compare/v0.0.10...v0.0.11) (2025-03-13)
 
 
