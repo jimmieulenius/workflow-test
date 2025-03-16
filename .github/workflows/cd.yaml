@@ -62,6 +62,10 @@ jobs:
       - init
       - semantic_release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
 
@@ -99,7 +103,7 @@ jobs:
                 -DestinationPath $archivePath `
                 -Force
 
-              gh release upload '${{ github.event.release.tag_name }}' $archivePath
+              gh release upload '${{ needs.semantic_release.outputs.new_release_version }}' $archivePath
             }
 
           
