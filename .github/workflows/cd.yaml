@@ -65,7 +65,6 @@ jobs:
     permissions:
       contents: write
       packages: write
-      # actions: write
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
@@ -96,8 +95,6 @@ jobs:
             -Publish `
             -NuGetUri 'https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json' `
             -PublishAction {
-              Write-Host "PublishOutput: $PublishOutput"
-
               $archivePath = "$PublishOutput.zip"
 
               Compress-Archive `
@@ -105,7 +102,7 @@ jobs:
                 -DestinationPath $archivePath `
                 -Force
 
-              gh release upload 'v${{ needs.semantic_release.outputs.new_release_version }}' $archivePath
+              gh release upload '${{ needs.semantic_release.outputs.new_release_git_tag }}' $archivePath
             }
 
           
