@@ -253,9 +253,7 @@ function Build-Package {
 
             $Runtime `
             | ForEach-Object {
-                $PublishOutput = $ExecutionContext.SessionState.Provider.Path.GetUnresolvedProviderPathFromPSPath(
-                    "./bin/$Configuration/publish/$_"
-                )
+                $PublishOutput = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("./bin/$Configuration/publish/$_")
 
                 dotnet publish `
                     --runtime $_ `
