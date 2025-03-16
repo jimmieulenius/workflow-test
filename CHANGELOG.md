@@ -1,3 +1,10 @@
+## [0.0.19](https://github.com/jimmieulenius/workflow-test/compare/v0.0.18...v0.0.19) (2025-03-16)
+
+
+### Bug Fixes
+
+* gfhj ([94b84c2](https://github.com/jimmieulenius/workflow-test/commit/94b84c2c2f5a647673950c6b46dde6dc234b5e48))
+
 ## [0.0.18](https://github.com/jimmieulenius/workflow-test/compare/v0.0.17...v0.0.18) (2025-03-16)
 
 
