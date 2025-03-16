@@ -105,7 +105,7 @@ jobs:
                 -DestinationPath $archivePath `
                 -Force
 
-              gh release upload '${{ needs.semantic_release.outputs.new_release_version }}' $archivePath
+              gh release upload 'v${{ needs.semantic_release.outputs.new_release_version }}' $archivePath
             }
 
           
