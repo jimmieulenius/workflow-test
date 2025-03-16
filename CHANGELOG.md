@@ -1,3 +1,10 @@
+## [0.0.16](https://github.com/jimmieulenius/workflow-test/compare/v0.0.15...v0.0.16) (2025-03-16)
+
+
+### Bug Fixes
+
+* ertyhuj ([2540c0c](https://github.com/jimmieulenius/workflow-test/commit/2540c0c099b282f0e472f3d4999c34c9a29a54bc))
+
 ## [0.0.15](https://github.com/jimmieulenius/workflow-test/compare/v0.0.14...v0.0.15) (2025-03-16)
 
 
