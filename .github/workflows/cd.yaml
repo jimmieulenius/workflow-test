@@ -85,8 +85,6 @@ jobs:
           NUGET_API_KEY: ${{ secrets.GITHUB_TOKEN }}
         shell: pwsh
         run: |
-          Write-Host '${{ needs.semantic_release.outputs.new_release_git_tag }}'
-
           Import-Module './scripts/CICD.DotNet.psm1'
 
           Build-Package `
@@ -104,7 +102,7 @@ jobs:
                 -DestinationPath $archivePath `
                 -Force
 
-              gh release upload '${{ needs.semantic_release.outputs.new_release_git_tag }}' $archivePath
+              gh release upload 'v${{ needs.semantic_release.outputs.new_release_version }}' $archivePath
             }
 
           
