@@ -1,3 +1,10 @@
+## [0.0.20](https://github.com/jimmieulenius/workflow-test/compare/v0.0.19...v0.0.20) (2025-03-17)
+
+
+### Bug Fixes
+
+* ghjk ([2924529](https://github.com/jimmieulenius/workflow-test/commit/2924529b6a5c21cf26ceb8920b3c431c1c731a33))
+
 ## [0.0.19](https://github.com/jimmieulenius/workflow-test/compare/v0.0.18...v0.0.19) (2025-03-16)
 
 
