@@ -11,6 +11,7 @@ on:
 env:
   TARGET_PATH: './src/ClassLibrary2'
   PREFIX: 'ClassLibrary'
+  RUNTIME: 'linux-x64, osx-x64, win-x64'
 
 jobs:
   init:
@@ -94,6 +95,7 @@ jobs:
             -AllowPrerelease:$${{ needs.init.outputs.allow_prerelease }} `
             -ProjectAssetFilter '${{ env.PREFIX }}*' `
             -Publish `
+            -Runtime '${{ env.RUNTIME }}' `
             -NuGetUri 'https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json' `
             -PublishAction {
               $archivePath = "$PublishOutput.zip"

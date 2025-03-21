@@ -164,11 +164,7 @@ function Build-Package {
             'win-x64'
         )]
         [String[]]
-        $Runtime = @(
-            'linux-x64',
-            'osx-x64',
-            'win-x64'
-        ),
+        $Runtime,
 
         [Parameter(ParameterSetName = 'Publish')]
         [ScriptBlock]
@@ -231,10 +227,6 @@ function Build-Package {
             exit 1
         }
 
-        # dotnet build `
-        #     --configuration $Configuration `
-        #     /p:Version=$versionString
-
         if ($Publish) {
             dotnet pack $arguments
 
@@ -258,8 +250,6 @@ function Build-Package {
                     -Value $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("./bin/$Configuration/publish/$_") `
                     -Scope 'Global' `
                     -Force
-
-                # $PublishOutput = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("./bin/$Configuration/publish/$_")
 
                 dotnet publish `
                     --runtime $_ `
