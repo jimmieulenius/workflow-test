@@ -1,3 +1,10 @@
+## [0.0.24](https://github.com/jimmieulenius/workflow-test/compare/v0.0.23...v0.0.24) (2025-03-21)
+
+
+### Bug Fixes
+
+* fghj ([6fd71cf](https://github.com/jimmieulenius/workflow-test/commit/6fd71cf4f18ca1eebdcefdbca630fcc06907dfb8))
+
 ## [0.0.23](https://github.com/jimmieulenius/workflow-test/compare/v0.0.22...v0.0.23) (2025-03-21)
 
 
