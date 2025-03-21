@@ -95,7 +95,7 @@ jobs:
             -AllowPrerelease:$${{ needs.init.outputs.allow_prerelease }} `
             -ProjectAssetFilter '${{ env.PREFIX }}*' `
             -Publish `
-            -Runtime '${{ env.RUNTIME }}' `
+            -Runtime ${{ env.RUNTIME }} `
             -NuGetUri 'https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json' `
             -PublishAction {
               $archivePath = "$PublishOutput.zip"
