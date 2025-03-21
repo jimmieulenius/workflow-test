@@ -1,3 +1,10 @@
+## [0.0.22](https://github.com/jimmieulenius/workflow-test/compare/v0.0.21...v0.0.22) (2025-03-21)
+
+
+### Bug Fixes
+
+* dhcj ([9b7d2ed](https://github.com/jimmieulenius/workflow-test/commit/9b7d2ed8b116685958da69a6444e6ba31d764f74))
+
 ## [0.0.21](https://github.com/jimmieulenius/workflow-test/compare/v0.0.20...v0.0.21) (2025-03-21)
 
 
